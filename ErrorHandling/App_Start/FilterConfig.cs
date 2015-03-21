@@ -1,5 +1,5 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using ErrorHandling.Controllers;
 
 namespace ErrorHandling
 {
@@ -7,7 +7,7 @@ namespace ErrorHandling
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new SendErrorWithoutDetailsAttribute());
         }
     }
 }
