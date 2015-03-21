@@ -10,7 +10,7 @@
 
             if (UserGateway.DoesExist(requestedUserName))
             {
-                responder.ShowWarning("User name already exists.");
+                responder.ShowWarning("User name already exists.");// Handled unique name constraint.
                 return;
             }
 

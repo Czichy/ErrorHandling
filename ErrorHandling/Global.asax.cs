@@ -22,6 +22,7 @@ namespace ErrorHandling
 
         private void LogException(Exception exception)
         {
+            // Log all unexpected errors in application (before controller instance created).
         }
     }
 }

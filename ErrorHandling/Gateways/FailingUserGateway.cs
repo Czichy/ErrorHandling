@@ -6,7 +6,7 @@ namespace ErrorHandling.Gateways
     {
         private static bool userNameExists = false;
 
-        public bool DoesExist(string userName)
+        public bool DoesExist(string userName)// Expected sql unique name constraint exception handled by business requirements analysis.
         {
             userNameExists = !userNameExists;
             return userNameExists;
@@ -18,12 +18,12 @@ namespace ErrorHandling.Gateways
             {
 
             }
-            catch (DeadlockException)
+            catch (DeadlockException)// Expected exception handled by gateway (use case doesn't even know it).
             {
                 Save(user);
             }
 
-            throw new UnexpectedSqlException();
+            throw new UnexpectedSqlException();// Unexpected exception to be handled globally.
         }
     }
 }

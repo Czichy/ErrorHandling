@@ -23,6 +23,7 @@ namespace ErrorHandling.Controllers
 
         private void LogException(Exception exception)
         {
+            // Log all unexpected errors in controller.
         }
     }
 }
