@@ -16,14 +16,19 @@ namespace ErrorHandling.Gateways
         {
             try
             {
-
+                SaveOrUpdate(user);
             }
             catch (DeadlockException)// Expected exception handled by gateway (use case doesn't even know it).
             {
-                Save(user);
+                SaveOrUpdate(user);
             }
 
             throw new UnexpectedSqlException();// Unexpected exception to be handled globally.
+        }
+
+        private void SaveOrUpdate(User user)
+        {
+
         }
     }
 }
